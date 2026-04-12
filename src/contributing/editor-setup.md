@@ -97,7 +97,7 @@ In your `./zed/settings.json` file you need something like this:
 }
 ```
 
-### NixOS
+## NixOS
 
 If you are on NixOS, you might get errors about `pkg-config` or `crown`:
 
@@ -108,7 +108,7 @@ If you are on NixOS, you might get errors about `pkg-config` or `crown`:
 `mach` passes different RUSTFLAGS to the Rust compiler than plain `cargo`, so if you try to build Servo with `cargo`, it will undo all the work done by `mach` (and vice versa).
 Because of this, and because Servo can currently only be built with `mach`, you need to configure the rust-analyzer extension to use `mach` in `.vscode/settings.json`:
 
-#### Using `crown`
+### Using `crown`
 
 If you are using `--use-crown`, you should also set CARGO_BUILD_RUSTC in `.vscode/settings.json` as follows, where `/nix/store/.../crown` is the output of `nix-shell --run 'command -v crown'`.
 
@@ -122,7 +122,7 @@ If you are using `--use-crown`, you should also set CARGO_BUILD_RUSTC in `.vscod
 
 These settings should be enough to not need to run `code .` from within a `nix-shell`, but it wouldn’t hurt to try that if you still have problems.
 
-#### Problems with proc macros
+### Problems with proc macros
 
 When enabling rust-analyzer’s proc macro support, you may start to see errors like
 
